@@ -4,7 +4,7 @@ const http = require("http");
 const requestListener = function (req, res) {};
   
 const server = http.createServer(requestListener);
-server.listen(8080);
+server.listen(process.env.PORT || 5000);
 
 var stream = T.stream('statuses/filter', { track: ['#Dark','#DarkNetflix'], language: 'pt' })
 
