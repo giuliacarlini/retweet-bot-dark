@@ -1,5 +1,10 @@
-const https = require('https');
 const T = require('./twitConfig');
+const http = require("http");
+
+const requestListener = function (req, res) {};
+  
+const server = http.createServer(requestListener);
+server.listen(8080);
 
 var stream = T.stream('statuses/filter', { track: ['#Dark','#DarkNetflix'], language: 'pt' })
 
@@ -10,3 +15,5 @@ stream.on('tweet', function (tweet) {
         });
     }
 })
+
+
